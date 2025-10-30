@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Appointment - LifeCare Hospital</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script defer src="script.js"></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="images/Screenshot 2025-10-24 070516.png" alt="Hospital Logo">
+      <h2>LifeCare Hospital</h2>
+    </div>
+    <nav id="nav-menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="departments.html">Departments</a></li>
+        <li><a href="doctors.html">Doctors</a></li>
+        <li><a href="appointment.html" class="active">Appointment</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+  </header>
+
+  <!-- Appointment Section -->
+  <section class="appointment-section">
+    <h1>Book Your Appointment</h1>
+    <p class="appoint-intro">
+      Schedule your visit with our expert doctors easily by filling out the form below.
+      We’ll confirm your appointment via email or phone as soon as possible.
+    </p>
+
+    <form id="appointmentForm" class="appointment-form">
+      <div class="form-row">
+        <input type="text" id="name" placeholder="Full Name" required>
+        <input type="email" id="email" placeholder="Email Address" required>
+      </div>
+
+      <div class="form-row">
+        <input type="text" id="phone" placeholder="Phone Number" required>
+        <select id="department" required>
+          <option value="">Select Department</option>
+          <option>Cardiology</option>
+          <option>Neurology</option>
+          <option>Orthopedics</option>
+          <option>Pediatrics</option>
+          <option>Gynecology</option>
+          <option>Emergency</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <input type="date" id="date" required>
+        <input type="time" id="time" required>
+      </div>
+
+      <textarea id="message" placeholder="Describe your symptoms or reason for visit (optional)"></textarea>
+
+      <button type="submit" class="btn-primary">Submit Appointment</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 LifeCare Hospital | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>
+<script>
+document.getElementById("appointmentForm").addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const data = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        phone: document.getElementById("phone").value,
+        department: document.getElementById("department").value,
+        date: document.getElementById("date").value,
+        time: document.getElementById("time").value,
+        message: document.getElementById("message").value
+    };
+
+    const response = await fetch("http://localhost:5000/appointments", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+    });
+
+    const result = await response.json();
+    alert(result.message);
+    this.reset();
+});
+</script>

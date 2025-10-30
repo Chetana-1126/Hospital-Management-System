@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LifeCare Hospital - Your Health, Our Priority</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script defer src="script.js"></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="images/Screenshot 2025-10-24 070516.png" >
+      <h2>LifeCare Hospital</h2>
+    </div>
+    <nav id="nav-menu">
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="departments.html">Departments</a></li>
+        <li><a href="doctors.html">Doctors</a></li>
+        <li><a href="appointment.html">Appointment</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>World-Class Healthcare</h1>
+      <p>Experience compassionate care and advanced medical technology at LifeCare Hospital.</p>
+      <a href="appointment.html" class="btn-primary">Book Appointment</a>
+    </div>
+  </section>
+
+  <!-- Departments -->
+  <section class="departments" id="departments">
+    <h2>Our Departments</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="images/cardiology.png" alt="Cardiology">
+        <h3>Cardiology</h3>
+        <p>Expert heart care with state-of-the-art facilities.</p>
+      </div>
+      <div class="card">
+        <img src="images/neurology.jpg" alt="Neurology">
+        <h3>Neurology</h3>
+        <p>Advanced treatments for brain and nervous system disorders.</p>
+      </div>
+      <div class="card">
+        <img src="images/orthopaedic.webp" alt="Orthopedics">
+        <h3>Orthopedics</h3>
+        <p>Comprehensive bone and joint care for all ages.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Doctors -->
+  <section class="doctors">
+    <h2>Meet Our Doctors</h2>
+    <div class="card-container">
+      <div class="card doctor-card">
+        <img src="https://static.vecteezy.com/system/resources/previews/028/287/555/non_2x/an-indian-young-female-doctor-isolated-on-green-ai-generated-photo.jpg" alt="Doctor">
+        <h3>Dr. Sarah Johnson</h3>
+        <p>Cardiologist</p>
+      </div>
+      <div class="card doctor-card">
+        <img src="https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA3L2FpZ2VuZXJhdGVkLTI0MDcyMy1yb2JfcmF3cGl4ZWxfc2VuaW9yX2luZGlhbl9kb2N0b3Jfc21hbGxfc21pbGVfZmF0X2luZGlhbl9ncF9pbl9fZjQyNmFjODEtYmMyOC00ZmFjLThjOWUtZmQ2NGE3Y2RjYzAxLWhxLXNjYWxlLTVfMDB4LmpwZw.jpg" alt="Doctor">
+        <h3>Dr. Mark Patel</h3>
+        <p>Neurologist</p>
+      </div>
+      <div class="card doctor-card">
+        <img src="https://img.freepik.com/premium-photo/indian-female-doctor-indian-nurse_714173-204.jpg?w=2000" alt="Doctor">
+        <h3>Dr. Emily Watson</h3>
+        <p>Orthopedic Surgeon</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Appointment -->
+  <section class="appointment">
+    <h2>Book Your Appointment</h2>
+    <form id="appointmentForm">
+      <div class="form-group">
+        <input type="text" id="name" placeholder="Full Name" required>
+        <input type="email" id="email" placeholder="Email Address" required>
+      </div>
+      <div class="form-group">
+        <input type="text" id="phone" placeholder="Phone Number" required>
+        <select id="department">
+          <option value="">Select Department</option>
+          <option>Cardiology</option>
+          <option>Neurology</option>
+          <option>Orthopedics</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <input type="date" id="date" required>
+        <input type="time" id="time" required>
+      </div>
+      <button type="submit" class="btn-primary">Submit</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 LifeCare Hospital | All Rights Reserved</p>
+  </footer>
+</body>
+</html>
